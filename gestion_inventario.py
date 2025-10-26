@@ -1,4 +1,4 @@
-# gestion_inventario.py
+"""" # gestion_inventario.py
 
 # 1. Crear la lista inventario con diccionarios de componentes
 # Cada diccionario debe tener las claves: "id", "tipo", "ubicacion", "lecturas" (lista de 3 floats)
@@ -23,7 +23,7 @@ inventario = [
     }
 ]
 
-"""" # 2. Calcular el promedio de lecturas para un id específico (ej. "S-101")
+# 2. Calcular el promedio de lecturas para un id específico (ej. "S-101")
 id_objetivo = "S-101"
 promedio_lecturas = 0
 
@@ -59,7 +59,7 @@ print("--- Análisis de Experimentos ---")
 print(f"Experimentos exitosos en AMBOS equipos (Intersección): {ambos_exitosos}")
 print(f"TOTAL de experimentos exitosos únicos (Unión): {total_unicos}")
 print(f"Experimentos solo en Equipo A (Diferencia): {solo_equipo_A}")
-print("-" * 30) """
+print("-" * 30)
 
 # Clasificador de Inventario (Bucle for y if)
 # Usamos el 'inventario' definido en el Módulo 3.
@@ -87,4 +87,31 @@ print("--- Clasificador de Inventario ---")
 print(f"IDs de Sensores: {sensores}")
 print(f"IDs de Motores: {motores}")
 print(f"IDs de Válvulas: {valvulas}")
+print("-" * 30) """
+
+# Simulador de Llenado de Tanque (Bucle while)
+capacidad_maxima = 1000  # litros
+volumen_actual = 0       # litros
+tasa_flujo = 50.5        # litros/min
+minuto = 0
+
+print("--- Simulador de Llenado de Tanque ---")
+
+# Bucle while se ejecuta mientras volumen_actual sea menor a 1000
+while volumen_actual < capacidad_maxima:
+    minuto += 1
+    # 1. Incrementar el volumen_actual por la tasa_flujo
+    volumen_actual += tasa_flujo
+    
+    # 2. Condición if: si el volumen_actual supera 950
+    if volumen_actual > 950:
+        print(f"Minuto {minuto}: Volumen actual {volumen_actual:.2f}L")
+        print("ALERTA: Tanque casi lleno") # Imprimir alerta
+        break  # Detener el bucle
+        
+    # 3. Imprimir el volumen actual en cada iteración
+    print(f"Minuto {minuto}: Volumen actual {volumen_actual:.2f}L")
+
+# Imprimir mensaje final
+print("Simulación de llenado detenida.")
 print("-" * 30)
