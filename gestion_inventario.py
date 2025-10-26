@@ -1,4 +1,4 @@
-"""" # gestion_inventario.py
+# gestion_inventario.py
 
 # 1. Crear la lista inventario con diccionarios de componentes
 # Cada diccionario debe tener las claves: "id", "tipo", "ubicacion", "lecturas" (lista de 3 floats)
@@ -23,7 +23,7 @@ inventario = [
     }
 ]
 
-# 2. Calcular el promedio de lecturas para un id específico (ej. "S-101")
+""" # 2. Calcular el promedio de lecturas para un id específico (ej. "S-101")
 id_objetivo = "S-101"
 promedio_lecturas = 0
 
@@ -87,7 +87,7 @@ print("--- Clasificador de Inventario ---")
 print(f"IDs de Sensores: {sensores}")
 print(f"IDs de Motores: {motores}")
 print(f"IDs de Válvulas: {valvulas}")
-print("-" * 30) """
+print("-" * 30)
 
 # Simulador de Llenado de Tanque (Bucle while)
 capacidad_maxima = 1000  # litros
@@ -114,4 +114,4 @@ while volumen_actual < capacidad_maxima:
 
 # Imprimir mensaje final
 print("Simulación de llenado detenida.")
-print("-" * 30)
+print("-" * 30) """
