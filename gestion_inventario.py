@@ -23,7 +23,7 @@ inventario = [
     }
 ]
 
-# 2. Calcular el promedio de lecturas para un id específico (ej. "S-101")
+"""" # 2. Calcular el promedio de lecturas para un id específico (ej. "S-101")
 id_objetivo = "S-101"
 promedio_lecturas = 0
 
@@ -59,4 +59,32 @@ print("--- Análisis de Experimentos ---")
 print(f"Experimentos exitosos en AMBOS equipos (Intersección): {ambos_exitosos}")
 print(f"TOTAL de experimentos exitosos únicos (Unión): {total_unicos}")
 print(f"Experimentos solo en Equipo A (Diferencia): {solo_equipo_A}")
+print("-" * 30) """
+
+# Clasificador de Inventario (Bucle for y if)
+# Usamos el 'inventario' definido en el Módulo 3.
+
+# 1. Crear las listas vacías
+sensores = []
+motores = []
+valvulas = []
+
+# 2. Iterar sobre la lista inventario
+for componente in inventario:
+    # 3. Revisar la clave "tipo" y añadir el ID a la lista que le corresponde
+    tipo = componente["tipo"]
+    id_componente = componente["id"]
+    
+    if tipo == "Sensor":
+        sensores.append(id_componente)
+    elif tipo == "Motor":
+        motores.append(id_componente)
+    elif tipo == "Válvula":
+        valvulas.append(id_componente)
+
+print("--- Clasificador de Inventario ---")
+# Imprimir las tres listas
+print(f"IDs de Sensores: {sensores}")
+print(f"IDs de Motores: {motores}")
+print(f"IDs de Válvulas: {valvulas}")
 print("-" * 30)
